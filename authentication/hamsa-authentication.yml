@@ -1,0 +1,50 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.hamsa.com/reference/api-documentation
+docs: https://developer.hamsa.com/reference/api-documentation
+summary:
+  types:
+  - signature
+  scheme: ethereum-message-signature
+  note: >-
+    The Hamsa Unified Confidential Ledger (UCL) / Hamsa Privacy JSON-RPC API does
+    not use API keys or OAuth. Callers authenticate protected methods by signing
+    an Ethereum message with their private key and supplying their address plus
+    the resulting signature (EIP-191 personal_sign style). Authorization is
+    role-based access control (RBAC) enforced on-chain.
+schemes:
+- name: EthereumMessageSignature
+  type: signature
+  scheme: ethereum-eip191
+  description: >-
+    Sign a message with the account private key (e.g. deployer.signMessage) and
+    pass the signer address and signature. Used to gate privacy-sensitive
+    (protected) JSON-RPC methods.
+  sources:
+  - https://developer.hamsa.com/reference/api-documentation
+roles:
+- id: 0
+  name: normal-user
+  description: Can query own balances and transactions only.
+- id: 1
+  name: administrator
+  description: Can query all balances and transactions.
+protected_methods:
+- eth_safeGetBalance
+- eth_getTransactionHistory
+unprotected_methods:
+- eth_estimateGas
+- eth_getNonce
+- eth_getBalance
+- eth_getTransactionByHash
+- eth_checkTransactionBundle
+- eth_blockNumber
+- eth_call
+- eth_chainId
+- eth_gasPrice
+- eth_getBlockByHash
+- eth_getBlockByNumber
+- eth_getBlockTransactionCountByHash
+- eth_getBlockTransactionCountByNumber
+- eth_getTransactionReceipt
+- eth_sendRawTransaction
