@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.hamsa.com/reference/api-documentation
+summary: >-
+  Cross-cutting request/response semantics for the Hamsa Unified Confidential
+  Ledger (UCL) / Hamsa Privacy platform. The public developer API is an
+  EVM-standard JSON-RPC 2.0 interface (eth_* methods) exposed by permissioned
+  Layer-2 nodes, complemented by on-chain DvP escrow smart contracts.
+protocol:
+  style: json-rpc-2.0
+  transport: [http, grpc]
+  standard: Ethereum JSON-RPC (EVM node compatible)
+  note: >-
+    Also documents a gRPC interface for token lifecycle operations (mint,
+    reserve, transfer, burn) in the UCL API suite.
+authentication:
+  style: ethereum-message-signature
+  detail: See authentication/hamsa-authentication.yml
+  access_control: role-based (Role 0 normal user, Role 1 administrator)
+idempotency:
+  supported: false
+  note: >-
+    No documented Idempotency-Key header. Idempotency is achieved via the
+    underlying blockchain model (per-account nonce and deterministic transaction
+    hashes) rather than an application-level idempotency key.
+error_envelope:
+  style: json-rpc-2.0-error
+  shape: '{ jsonrpc: "2.0", id, error: { code, message, data } }'
+transactions:
+  settlement_model: Delivery-versus-Payment (DvP) and Payment-versus-Payment (PvP)
+  escrow_functions:
+  - scheduleBurn
+  - scheduleMint
+  - scheduleTransfer
+  - scheduleTransfer1155
+  - scheduleBurn1155
+  - scheduleMint1155
+  - scheduleBurnMintAndGenerate
+  token_standards: [ERC-20-style, ERC-1155]
+cross_links:
+  authentication: authentication/hamsa-authentication.yml
+  conformance: conformance/hamsa-conformance.yml

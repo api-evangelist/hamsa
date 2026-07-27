@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: probed
+source: live probes of /.well-known/* and /llms.txt on Hamsa hosts
+hosts:
+- host: https://www.hamsa.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /robots.txt
+    status: 200
+- host: https://developer.hamsa.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 200
+    file: ../llms/hamsa-llms.txt
+    note: LLMs index of docs pages and API reference (saved verbatim).

@@ -1,7 +1,31 @@
 aid: hamsa
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hamsa.png
 name: Hamsa
-description: Hamsa is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Hamsa (formerly HamsaPay) is a San Francisco-based financial infrastructure
+  company "powering the Finternet." It builds the Hamsa Unified Confidential
+  Ledger (UCL), a privacy-enabled, EVM-compatible, permissioned Layer-2
+  blockchain for banks and financial institutions, plus the Hamsa Privacy
+  module that uses zero-knowledge-proof (ZKP) rollups on Hyperledger Besu to run
+  confidential Delivery-versus-Payment (DvP) and Payment-versus-Payment (PvP)
+  settlement, tokenized deposits, stablecoins, and CBDCs. The developer platform
+  exposes an EVM-standard JSON-RPC API (eth_* methods) and DvP escrow smart
+  contracts, authenticated with Ethereum message signatures and role-based
+  access control. Hamsa has tokenized over $3.2B for Tier-1/Tier-2 banks
+  (including Banco Safra's Safra Dolar stablecoin) and participates in the
+  Brazilian Drex CBDC pilot.
 url: https://raw.githubusercontent.com/api-evangelist/hamsa/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +35,20 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Financial Services
+- Blockchain
+- Payments
+- Tokenization
+- Privacy
+- Zero-Knowledge Proofs
+- CBDC
+- Settlement
+- DeFi
+- EVM
+- JSON-RPC
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,4 +57,39 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://hamsapay.com
+  url: https://www.hamsa.com
+- type: DeveloperPortal
+  url: https://developer.hamsa.com/
+- type: Documentation
+  url: https://developer.hamsa.com/docs/hamsa-privacy-overview
+- type: APIReference
+  url: https://developer.hamsa.com/reference/api-documentation
+- type: Login
+  url: https://developer.hamsa.com/login
+- type: Blog
+  url: https://www.hamsa.com/newsroom
+- type: TermsOfService
+  url: https://www.hamsa.com/legal/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.hamsa.com/legal/privacy-policy
+- type: LinkedIn
+  url: https://www.linkedin.com/company/hamsa-finance
+- type: Twitter
+  url: https://x.com/hamsafinance
+- type: LLMsTxt
+  url: llms/hamsa-llms.txt
+- type: Authentication
+  url: authentication/hamsa-authentication.yml
+- type: Conventions
+  url: conventions/hamsa-conventions.yml
+- type: Conformance
+  url: conformance/hamsa-conformance.yml
+- type: DomainSecurity
+  url: security/hamsa-domain-security.yml
+- type: WellKnown
+  url: well-known/hamsa-well-known.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

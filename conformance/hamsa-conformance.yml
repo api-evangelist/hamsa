@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.hamsa.com/reference/api-documentation
+standards:
+- id: ethereum-json-rpc
+  conforms: true
+  evidence: >-
+    Public API follows the Ethereum JSON-RPC standard (eth_* methods:
+    eth_call, eth_blockNumber, eth_chainId, eth_getBalance,
+    eth_sendRawTransaction, eth_getTransactionReceipt, etc.).
+- id: evm-compatible
+  conforms: true
+  evidence: EVM-compatible permissioned Layer-2 built on Hyperledger Besu.
+- id: eip-191-signed-messages
+  conforms: true
+  evidence: Protected methods authenticated via Ethereum message signatures (personal_sign).
+- id: erc-1155-multi-token
+  conforms: true
+  evidence: DvP escrow contracts expose 1155 variants (scheduleTransfer1155, scheduleBurn1155, scheduleMint1155).
+- id: zero-knowledge-proofs
+  conforms: true
+  evidence: Hamsa Privacy uses ZKP rollups (Microsoft-derived ZKP system) for confidential DvP settlement.
+- id: json-rpc-2.0
+  conforms: true
+  evidence: JSON-RPC 2.0 request/response and error envelope.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use the JSON-RPC 2.0 error object, not application/problem+json.
