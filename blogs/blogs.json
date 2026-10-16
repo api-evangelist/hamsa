@@ -2,13 +2,17 @@
   "repo": "hamsa",
   "feeds": [
     {
-      "source": "https://developer.hamsa.com/login",
-      "feed_url": "https://developer.hamsa.com/login",
+      "source": "https://www.hamsa.com/newsroom",
+      "feed_url": "https://www.hamsa.com/newsroom",
       "title": "",
       "saved": 0,
       "method": "none"
+    },
+    {
+      "source": "https://developer.hamsa.com/login",
+      "error": "HTTPError"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-10-03T12:30:02Z"
+  "fetched": "2026-10-10T13:15:00Z"
 }
